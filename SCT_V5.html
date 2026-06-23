@@ -53,7 +53,6 @@ body { font-family: var(--font-sans); background: var(--bg-main); color: var(--g
 .bg-amber { background-color: var(--amber-bg) !important; color: var(--amber-main); }
 .bg-green { background-color: var(--green-bg) !important; color: var(--green-main); }
 .bg-blue { background-color: var(--blue-bg) !important; color: var(--blue-main); }
-.bg-navy { background-color: #E6EAF3 !important; color: var(--exec-navy); }
 
 .font-mono { font-family: var(--font-mono); }
 .font-bold { font-weight: 700; }
@@ -98,19 +97,9 @@ body { font-family: var(--font-sans); background: var(--bg-main); color: var(--g
 /* Progress Bar */
 .prog-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .prog-label { font-size: 11px; color: var(--gray-700); width: 90px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
-.prog-track { flex: 1; height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden; }
+.prog-track { flex: 1; height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
 .prog-fill { height: 100%; border-radius: 4px; transition: width 0.4s ease; }
 .prog-pct { font-size: 11px; font-weight: 700; width: 40px; text-align: right; font-family: var(--font-mono); }
-/* === Achievement bar visual enhancement (solid, high-contrast; scoped to bar fills only) === */
-.prog-fill.bg-green,  .runrate-fill.bg-green  { background-color: #16A34A !important; }
-.prog-fill.bg-navy,   .runrate-fill.bg-navy   { background-color: #1E40AF !important; }
-.prog-fill.bg-amber,  .runrate-fill.bg-amber  { background-color: #F59E0B !important; }
-.prog-fill.bg-red,    .runrate-fill.bg-red    { background-color: #DC2626 !important; }
-.text-navy { color: #1E40AF !important; }
-.prog-pct.text-green { color: #16A34A !important; }
-.prog-pct.text-navy  { color: #1E40AF !important; }
-.prog-pct.text-amber { color: #F59E0B !important; }
-.prog-pct.text-red   { color: #DC2626 !important; }
 
 /* Tables */
 .table-wrapper { overflow-y: auto; max-height: 240px; }
@@ -154,7 +143,7 @@ body { font-family: var(--font-sans); background: var(--bg-main); color: var(--g
 
 /* Runrate Bar */
 .runrate-wrapper { margin-top: 8px; }
-.runrate-track { height: 12px; background: #E5E7EB; border-radius: 6px; position: relative; overflow: visible; }
+.runrate-track { height: 12px; background: var(--gray-100); border-radius: 6px; position: relative; overflow: visible; }
 .runrate-fill { height: 100%; border-radius: 6px; position: relative; }
 .runrate-marker { position: absolute; top: -4px; width: 2px; height: 20px; background: var(--gray-900); box-shadow: 0 0 4px rgba(0,0,0,0.3); }
 .runrate-label { position: absolute; top: -18px; font-size: 9px; font-weight: 600; color: var(--gray-700); transform: translateX(-50%); white-space: nowrap; }
@@ -1106,37 +1095,6 @@ body.snapshot-mode #snapshot-watermark { display: block; }
 .dd-ca-recovery { background: var(--green-main); color: #fff; }
 .dd-keydriver { margin-top: 10px; padding: 8px 10px; border-radius: 6px; background: var(--gray-50); border-left: 3px solid var(--exec-navy); }
 .dd-keydriver ul { margin: 4px 0 0; padding-left: 16px; font-size: 11px; line-height: 1.55; color: var(--gray-700); }
-
-/* ===== BB2.5 Timegone Analysis (additive) ===== */
-.tg-header { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; padding: 8px 12px; background: var(--gray-50); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; }
-.tg-header .h-item { display: flex; gap: 5px; align-items: baseline; }
-.tg-header .h-k { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--gray-500); }
-.tg-header .h-v { font-family: var(--font-mono); font-weight: 800; font-size: 12px; color: var(--gray-900); }
-.tg-card .tg-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 6px; }
-.tg-card .tg-name { font-size: 13px; font-weight: 800; font-family: var(--font-mono); color: var(--gray-900); }
-.tg-row { display: flex; justify-content: space-between; gap: 8px; padding: 3px 0; font-size: 11px; border-bottom: 1px dashed var(--border-color); }
-.tg-row:last-child { border-bottom: none; }
-.tg-row .k { color: var(--gray-500); font-weight: 600; }
-.tg-row .v { font-family: var(--font-mono); font-weight: 700; color: var(--gray-900); }
-.tg-row .v.pos { color: var(--green-main); } .tg-row .v.neg { color: var(--red-main); } .tg-row .v.mut { color: var(--gray-500); }
-.tg-badge { font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 4px; color: #fff; white-space: nowrap; }
-.tg-ahead { background: var(--green-main); } .tg-behind { background: var(--red-main); } .tg-ontrack { background: var(--amber-main); }
-.rn-badge { font-size: 8px; font-weight: 800; padding: 1px 5px; border-radius: 3px; margin-left: 5px; vertical-align: middle; }
-.rn-onpace { background: var(--green-main); color: #fff; } .rn-low { background: #86C166; color: #fff; }
-.rn-moderate { background: var(--amber-main); color: #fff; } .rn-high { background: #E8833A; color: #fff; } .rn-critical { background: var(--red-main); color: #fff; }
-.tg-insight { border-left: 4px solid var(--exec-navy); margin-top: 10px; }
-.tg-insight ul { margin: 4px 0 0; padding-left: 16px; font-size: 11px; line-height: 1.6; color: var(--gray-700); }
-/* mini KPI tiles (Hero + 2×2) — reuse kpi typography tokens */
-.tg-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 5px; }
-.tg-mini { background: var(--gray-50); border: 1px solid var(--border-color); border-radius: 6px; padding: 6px 8px; display: flex; flex-direction: column; justify-content: center; min-height: 44px; }
-.tg-mini.tg-hero { grid-row: span 2; align-items: flex-start; justify-content: center; background: #fff; }
-.tg-mini-v { font-family: var(--font-mono); font-weight: 800; font-size: 15px; color: var(--gray-900); line-height: 1.1; }
-.tg-hero .tg-mini-v { font-size: 26px; }
-.tg-mini-v.pos { color: var(--green-main); } .tg-mini-v.neg { color: var(--red-main); } .tg-mini-v.mut { color: var(--gray-500); }
-.tg-mini-l { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: var(--gray-500); margin-top: 2px; }
-.tg-hero .tg-mini-l { font-size: 10px; }
-.tg-mini-s { font-size: 8px; color: var(--gray-500); margin-top: 2px; font-family: var(--font-mono); }
-@media(max-width: 768px) { .tg-grid { grid-template-columns: 1fr 1fr; } .tg-mini.tg-hero { grid-row: auto; grid-column: span 2; } }
 </style>
 </head>
 <body>
@@ -1540,38 +1498,6 @@ body.snapshot-mode #snapshot-watermark { display: block; }
         </div>
       </div>
 
-      <div class="sub-section" id="ws-bb5-container" style="display:none">
-        <div class="sub-section-title">🏪 BB1.5 — Wholesaler Performance by Class
-          <span style="font-size:10px;color:var(--gray-500);font-weight:500">(Source: Wholesaler Sheet | Field: CLASS · Act TM · LMHK · LYHK)</span>
-        </div>
-        <div class="grid-2 mb-8">
-          <!-- LEFT: Class Summary Table -->
-          <div class="kpi-card">
-            <div class="kpi-label">📋 Class Summary — Sales, Contribution &amp; Growth</div>
-            <div class="table-auto-height">
-              <table class="data-table">
-                <thead><tr>
-                  <th>Class</th><th style="text-align:right">Sales TM</th><th style="text-align:right">Contrib%</th>
-                  <th style="text-align:right">Growth LM%</th><th style="text-align:right">Growth LY%</th><th>Status</th>
-                </tr></thead>
-                <tbody id="bb5-class-tbl"></tbody>
-                <tfoot id="bb5-class-tfoot"></tfoot>
-              </table>
-            </div>
-          </div>
-          <!-- RIGHT: Combo Chart -->
-          <div class="kpi-card">
-            <div class="kpi-label">📊 Sales TM vs Growth LM% / LY% by Class</div>
-            <div class="chart-container"><canvas id="chart-bb5-class"></canvas></div>
-          </div>
-        </div>
-        <!-- Executive Insight Card -->
-        <div class="kpi-card" style="border-left:4px solid var(--blue-main)">
-          <div class="kpi-label">🧭 Executive Insight — Class Performance</div>
-          <div id="bb5-insight"></div>
-        </div>
-      </div>
-
       <div class="sub-section">
         <div class="sub-section-title">📊 BB2 — Performance per Program</div>
         <div class="grid-3 mb-8">
@@ -1606,16 +1532,6 @@ body.snapshot-mode #snapshot-watermark { display: block; }
           <div style="font-size:10px;color:var(--gray-500);margin-bottom:8px">Arjuna &amp; Bima = Value (Rp) | Supercup = Qty — semua ditampilkan dalam Ach%</div>
           <div class="chart-container" style="height:200px"><canvas id="chart-bb2-program"></canvas></div>
         </div>
-      </div>
-
-      <!-- BB2.5: Timegone Analysis (Source: DimDate timegone + ITG Arjuna/Bima/Supercup achievement) -->
-      <div class="sub-section" id="ws-timegone-container">
-        <div class="sub-section-title">⏱ BB2.5 — Timegone Analysis
-          <span style="font-size:10px;color:var(--gray-500);font-weight:500">(Timegone: DimDate | Achievement: ITG Programs)</span>
-        </div>
-        <div id="tg-header" class="tg-header"></div>
-        <div id="tg-cards" class="grid-3 mb-8"></div>
-        <div id="tg-insight" class="kpi-card tg-insight"></div>
       </div>
 
       <div class="sub-section" id="ws-pareto-container">
@@ -1689,6 +1605,37 @@ body.snapshot-mode #snapshot-watermark { display: block; }
       </div>
 
       <!-- BB5: Wholesaler Performance by Class (Source: Wholesaler sheet | Field: CLASS) -->
+      <div class="sub-section" id="ws-bb5-container" style="display:none">
+        <div class="sub-section-title">🏪 Wholesaler Performance by Class
+          <span style="font-size:10px;color:var(--gray-500);font-weight:500">(Source: Wholesaler Sheet | Field: CLASS · Act TM · LMHK · LYHK)</span>
+        </div>
+        <div class="grid-2 mb-8">
+          <!-- LEFT: Class Summary Table -->
+          <div class="kpi-card">
+            <div class="kpi-label">📋 Class Summary — Sales, Contribution &amp; Growth</div>
+            <div class="table-auto-height">
+              <table class="data-table">
+                <thead><tr>
+                  <th>Class</th><th style="text-align:right">Sales TM</th><th style="text-align:right">Contrib%</th>
+                  <th style="text-align:right">Growth LM%</th><th style="text-align:right">Growth LY%</th><th>Status</th>
+                </tr></thead>
+                <tbody id="bb5-class-tbl"></tbody>
+                <tfoot id="bb5-class-tfoot"></tfoot>
+              </table>
+            </div>
+          </div>
+          <!-- RIGHT: Combo Chart -->
+          <div class="kpi-card">
+            <div class="kpi-label">📊 Sales TM vs Growth LM% / LY% by Class</div>
+            <div class="chart-container"><canvas id="chart-bb5-class"></canvas></div>
+          </div>
+        </div>
+        <!-- Executive Insight Card -->
+        <div class="kpi-card" style="border-left:4px solid var(--blue-main)">
+          <div class="kpi-label">🧭 Executive Insight — Class Performance</div>
+          <div id="bb5-insight"></div>
+        </div>
+      </div>
     </section>
 
     <!-- =========================
@@ -2067,11 +2014,6 @@ const Utils = {
   calcGrowth: (act, lm) => lm !== 0 ? ((act - lm) / Math.abs(lm)) * 100 : 0,
 
   getPillClass: (ach) => ach >= 90 ? 'bg-green' : ach >= 60 ? 'bg-amber' : 'bg-red',
-  // Item 2: pace-aware region achievement coloring (Gap vs Timegone). Region chart only.
-  getPaceClass: (ach) => {
-    const gap = ach - TimeEngine.pace();
-    return gap >= 10 ? 'bg-green' : gap >= -5 ? 'bg-navy' : gap >= -15 ? 'bg-amber' : 'bg-red';
-  },
   getTextClass: (ach) => ach >= 90 ? 'text-green' : ach >= 60 ? 'text-amber' : 'text-red',
   getProgColor: (ach) => ach >= 90 ? Config.COLORS.green : ach >= 60 ? Config.COLORS.amber : Config.COLORS.red,
 
@@ -2496,10 +2438,10 @@ const DOM = {
 };
 
 const Components = {
-  progRow: (label, ach, paceAware = false) => {
+  progRow: (label, ach) => {
     const w = Math.min(Math.abs(ach), 100);
-    const colorClass = paceAware ? Utils.getPaceClass(ach) : Utils.getPillClass(ach);
-    const txtClass = 'text-' + colorClass.replace('bg-', '');   // pct text follows bar/status color
+    const colorClass = Utils.getPillClass(ach);
+    const txtClass = Utils.getTextClass(ach);
     return `
       <div class="prog-row">
         <div class="prog-label" title="${label}">${label}</div>
@@ -3752,60 +3694,6 @@ const KPIEngine = {
     res.scT  = getTopBot(sc);
 
     return { ws: res };
-  },
-
-  /**
-   * calcITGTimegone(ws, td) ← NEW (BB2.5) — PURE, additive, no State writes.
-   * Timegone from DimDate (td = TimeEngine.get()); Achievement reuses ws.arj/.bim/.sc
-   * (already computed by calcWholesaler — unchanged). Returns header + 3 cards + insight.
-   */
-  calcITGTimegone: (ws, td) => {
-    const tg = td.timeGone, hkRem = td.hkRem, hkPass = td.hkPass;
-
-    const mk = (name, prog, isQty, color) => {
-      if (!prog || !prog.tgt) return { name, isQty, color, hasData: false };
-      const ach     = prog.ach;                                   // existing Achievement %
-      const gapVsTG = ach - tg;
-      const reqDailySales = hkRem > 0 ? (prog.tgt - prog.act) / hkRem : null;
-      const remainGap = prog.tgt - prog.act;   // Remaining Gap Value (headline of slot 3)
-      const proj    = tg > 0 ? (ach / tg) * 100 : null;
-      const curRate = hkPass > 0 ? ach / hkPass : 0;
-      const reqRate = hkRem > 0 ? (100 - ach) / hkRem : null;
-      const recovNeed = (curRate > 0 && reqRate !== null) ? ((reqRate / curRate) - 1) * 100 : null;
-
-      const status = gapVsTG >= -5  ? { key: 'ontrack',  label: 'ON TRACK', icon: '🟢', cls: 'tg-ahead' }
-                   : gapVsTG >= -15 ? { key: 'recovery', label: 'RECOVERY', icon: '🟠', cls: 'tg-ontrack' }
-                   :                  { key: 'critical', label: 'CRITICAL', icon: '🔴', cls: 'tg-behind' };
-
-      const rn = recovNeed;
-      const recovInterp = (rn === null || rn <= 0) ? { label: 'On Pace',                    cls: 'rn-onpace' }
-                        : rn <= 25  ? { label: 'Low Recovery Required',      cls: 'rn-low' }
-                        : rn <= 75  ? { label: 'Moderate Recovery Required', cls: 'rn-moderate' }
-                        : rn <= 125 ? { label: 'High Recovery Required',     cls: 'rn-high' }
-                        :             { label: 'Critical Recovery Required', cls: 'rn-critical' };
-
-      return { name, isQty, color, hasData: true, ach, gapVsTG, remainGap, reqDailySales, proj, recovNeed, status, recovInterp };
-    };
-
-    const cards = [
-      mk('ITG Arjuna',   ws.arj, false, 'amber'),
-      mk('ITG Bima',     ws.bim, false, 'red'),
-      mk('ITG Supercup', ws.sc,  true,  'blue')
-    ];
-
-    const valid = cards.filter(c => c.hasData);
-    const worstGap  = valid.length ? valid.reduce((m, c) => c.gapVsTG < m.gapVsTG ? c : m) : null;
-    const recovList = valid.filter(c => c.recovNeed !== null && c.recovNeed > 0);
-    const highRecov = recovList.length ? recovList.reduce((m, c) => c.recovNeed > m.recovNeed ? c : m) : null;
-    const projList  = valid.filter(c => c.proj !== null);
-    const bestProj  = projList.length ? projList.reduce((m, c) => c.proj > m.proj ? c : m) : null;
-
-    return {
-      hasData: valid.length > 0,
-      header: { timeGone: tg, hkPass: td.hkPass, hkTot: td.hkTot, hkRem: td.hkRem },
-      cards,
-      insight: { worstGap, highRecov, bestProj }
-    };
   },
 
   calcPSAchiever: (data) => {
@@ -6207,7 +6095,6 @@ const RenderEngine = {
     RenderEngine.performance(k.perf);
     RenderEngine.caMonitoring(k.ca);
     RenderEngine.wholesaler(k.ws);
-    RenderEngine.renderITGTimegone(k);
     RenderEngine.renderWholesalerClassPerformance(k.wsClass);
     RenderEngine.bb4ClassAnalysis(k);
     RenderEngine.psAchiever(k.ps);
@@ -6935,7 +6822,7 @@ const RenderEngine = {
     DOM.setHtml('ws-all-lm', TrendEngine.gridHtml(w.allTrend));
 
     DOM.setTxt('ws-badge-zero', `WS Ach ${Utils.fmtPct(w.allAch)}`);
-    DOM.setHtml('ws-all-regions', w.regAll.map(r => Components.progRow(r.reg, r.ach, true)).join(''));
+    DOM.setHtml('ws-all-regions', w.regAll.map(r => Components.progRow(r.reg, r.ach)).join(''));
 
     const setProg = (id, d, isQty) => {
       DOM.setTxt(`ws-${id}-ach`, Utils.fmtPct(d.ach));
@@ -7101,15 +6988,15 @@ const RenderEngine = {
     ChartEngine.create('chart-bb5-class', 'bar', {
       labels,
       datasets: [
-        { label: 'Sales TM', data: wc.classes.map(c => c.tm), backgroundColor: '#0F2744',
+        { label: 'Sales TM', data: wc.classes.map(c => c.tm), backgroundColor: C.blue,
           borderRadius: 4, yAxisID: 'y', order: 3, barThickness: 30 },
         { label: 'Growth LM%', data: wc.classes.map(c => c.gLM === null ? null : +c.gLM.toFixed(1)),
-          type: 'line', borderColor: '#10B981', backgroundColor: 'transparent', fill: false, tension: 0.25,
-          pointRadius: 4, pointBackgroundColor: '#10B981', pointBorderColor: '#fff', pointBorderWidth: 2,
+          type: 'line', borderColor: C.green, backgroundColor: 'transparent', fill: false, tension: 0.25,
+          pointRadius: 4, pointBackgroundColor: C.green, pointBorderColor: '#fff', pointBorderWidth: 2,
           yAxisID: 'y1', order: 1, spanGaps: true },
         { label: 'Growth LY%', data: wc.classes.map(c => c.gLY === null ? null : +c.gLY.toFixed(1)),
-          type: 'line', borderColor: '#F59E0B', backgroundColor: 'transparent', fill: false, tension: 0.25,
-          pointRadius: 4, pointBackgroundColor: '#F59E0B', pointBorderColor: '#fff', pointBorderWidth: 2,
+          type: 'line', borderColor: C.amber, backgroundColor: 'transparent', fill: false, tension: 0.25,
+          pointRadius: 4, pointBackgroundColor: C.amber, pointBorderColor: '#fff', pointBorderWidth: 2,
           borderDash: [5, 3], yAxisID: 'y1', order: 2, spanGaps: true }
       ]
     }, {
@@ -7126,29 +7013,6 @@ const RenderEngine = {
              ticks: { callback: v => Utils.fmtCompact(v), font: { size: 9 } }, grid: { color: '#F2F2F7' } },
         y1: { position: 'right', title: { display: true, text: 'Growth %', font: { size: 9 } },
               ticks: { callback: v => v + '%', font: { size: 9 } }, grid: { drawOnChartArea: false } }
-      },
-      animation: {
-        onComplete: function() {
-          const chart = this, ctx = chart.ctx;
-          ctx.save();
-          ctx.textAlign = 'center';
-          // di=0 Sales TM (bar, navy, above bar) · di=1 Growth LM% (green, above point) · di=2 Growth LY% (orange, below point → anti-overlap)
-          const draw = (di, color, baseline, dy, isPct) => {
-            ctx.fillStyle = color;
-            ctx.textBaseline = baseline;
-            ctx.font = (di === 0 ? '700 9px' : '700 8.5px') + ' "IBM Plex Mono", monospace';
-            chart.getDatasetMeta(di).data.forEach((el, idx) => {
-              const v = chart.data.datasets[di].data[idx];
-              if (v === null || v === undefined) return;
-              const txt = isPct ? ((v >= 0 ? '+' : '') + v.toFixed(1) + '%') : Utils.fmtCompact(v);
-              ctx.fillText(txt, el.x, el.y + dy);
-            });
-          };
-          draw(0, '#0F2744', 'bottom', -4, false);
-          draw(1, '#10B981', 'bottom', -7, true);
-          draw(2, '#F59E0B', 'top',     7, true);
-          ctx.restore();
-        }
       }
     });
 
@@ -7230,75 +7094,6 @@ const RenderEngine = {
     } else {
       DOM.setHtml('ps-ranking', '');
     }
-  },
-
-  /**
-   * renderITGTimegone(k) ← NEW (BB2.5). Computes via KPIEngine.calcITGTimegone (pure)
-   * and injects the shared header, 3 program cards, and executive insight.
-   * Read-only on k.ws + TimeEngine — no existing KPI/state touched.
-   */
-  renderITGTimegone: (k) => {
-    if (!DOM.el('tg-cards')) return;
-    const tg = KPIEngine.calcITGTimegone(k.ws, TimeEngine.get());
-    const fmtSigned = (v, d = 1) => `${v >= 0 ? '+' : ''}${v.toFixed(d)}`;
-    const fmtReq = (c) => c.reqDailySales === null ? '—'
-      : c.isQty ? `${Math.round(c.reqDailySales).toLocaleString('id-ID')} u/HK`
-                : `${Utils.fmtCompact(c.reqDailySales)}/HK`;
-
-    const h = tg.header;
-    DOM.setHtml('tg-header',
-      `<div class="h-item"><span class="h-k">Timegone</span><span class="h-v">${Utils.fmtPct(h.timeGone)}</span></div>` +
-      `<div class="h-item"><span class="h-k">HK Passed</span><span class="h-v">${h.hkPass}</span></div>` +
-      `<div class="h-item"><span class="h-k">HK Total</span><span class="h-v">${h.hkTot}</span></div>` +
-      `<div class="h-item"><span class="h-k">HK Remaining</span><span class="h-v">${h.hkRem}</span></div>`
-    );
-
-    const fmtGap = (v, isQty) => isQty ? `${Math.round(v).toLocaleString('id-ID')} u` : Utils.fmtCompact(v);
-    DOM.setHtml('tg-cards', tg.cards.map(c => {
-      if (!c.hasData) return `<div class="kpi-card bdr-top-${c.color} tg-card"><div class="tg-head"><span class="tg-name">${c.name}</span></div><div class="tg-mini"><span class="tg-mini-l">Data tidak tersedia pada filter saat ini.</span></div></div>`;
-      const gapCls   = c.gapVsTG >= 0 ? 'pos' : 'neg';
-      const recovTxt = (c.recovNeed === null || c.recovNeed <= 0) ? '—' : `+${c.recovNeed.toFixed(1)}%`;
-      const recovCls = (c.recovNeed === null || c.recovNeed <= 0) ? 'mut' : 'neg';
-      const projCls  = c.proj === null ? 'mut' : c.proj >= 100 ? 'pos' : c.proj >= 90 ? '' : 'neg';
-      return `<div class="kpi-card bdr-top-${c.color} tg-card">
-        <div class="tg-head">
-          <span class="tg-name">${c.name}</span>
-          <span class="tg-badge ${c.status.cls}">${c.status.icon} ${c.status.label}</span>
-        </div>
-        <div class="tg-grid">
-          <div class="tg-mini tg-hero">
-            <div class="tg-mini-v">${Utils.fmtPct(c.ach)}</div>
-            <div class="tg-mini-l">Achievement</div>
-          </div>
-          <div class="tg-mini">
-            <div class="tg-mini-v ${gapCls}">${fmtSigned(c.gapVsTG)}</div>
-            <div class="tg-mini-l">Gap vs Timegone</div>
-          </div>
-          <div class="tg-mini">
-            <div class="tg-mini-v">${fmtGap(c.remainGap, c.isQty)}</div>
-            <div class="tg-mini-l">Remaining Gap</div>
-            <div class="tg-mini-s">≈ ${fmtReq(c)}</div>
-          </div>
-          <div class="tg-mini">
-            <div class="tg-mini-v ${recovCls}">${recovTxt}</div>
-            <div class="tg-mini-l">Recovery Need</div>
-            <div class="tg-mini-s"><span class="rn-badge ${c.recovInterp.cls}">${c.recovInterp.label}</span></div>
-          </div>
-          <div class="tg-mini">
-            <div class="tg-mini-v ${projCls}">${c.proj === null ? '—' : Utils.fmtPct(c.proj)}</div>
-            <div class="tg-mini-l">Projected ME</div>
-          </div>
-        </div>
-      </div>`;
-    }).join(''));
-
-    const i = tg.insight, bullets = [];
-    if (i.worstGap)  bullets.push(`Worst gap vs timegone: <strong>${i.worstGap.name}</strong> (${fmtSigned(i.worstGap.gapVsTG)}).`);
-    if (i.highRecov) bullets.push(`Highest recovery need: <strong>${i.highRecov.name}</strong> (+${i.highRecov.recovNeed.toFixed(1)}% pace uplift — ${i.highRecov.recovInterp.label}).`);
-    else             bullets.push(`Tidak ada program yang memerlukan recovery — semua on pace atau lebih cepat.`);
-    if (i.bestProj)  bullets.push(`Best projected finish: <strong>${i.bestProj.name}</strong> (${Utils.fmtPct(i.bestProj.proj)}).`);
-    DOM.setHtml('tg-insight',
-      `<div class="kpi-label">🧭 Executive Insight — Timegone</div><ul>${bullets.map(b => `<li>${b}</li>`).join('')}</ul>`);
   },
 
   bb4ClassAnalysis: (k) => {
@@ -7612,8 +7407,8 @@ const RenderEngine = {
       labels: k.ws.regAll.map(r => r.reg),
       datasets: [
         { label: 'Target', data: k.ws.regAll.map(r => r.tgt), backgroundColor: C.gray, borderRadius: 3 },
-        { label: 'LM',     data: k.ws.regAll.map(r => r.lm),  backgroundColor: '#0F1B3F', borderRadius: 3 },
-        { label: 'Actual', data: k.ws.regAll.map(r => r.act), backgroundColor: C.amber, borderRadius: 3 }
+        { label: 'Actual', data: k.ws.regAll.map(r => r.act), backgroundColor: C.amber, borderRadius: 3 },
+        { label: 'LM', data: k.ws.regAll.map(r => r.lm), type: 'line', borderColor: C.blue, backgroundColor: 'transparent', fill: false, tension: 0.2, pointRadius: 5, pointBackgroundColor: C.blue, pointBorderColor: '#fff', pointBorderWidth: 2 }
       ]
     }, {
       plugins: {
